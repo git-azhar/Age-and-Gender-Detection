@@ -1,4 +1,5 @@
 import cv2 as cv
+import numpy as np
 
 
 class FaceDetection:
@@ -13,12 +14,12 @@ class FaceDetection:
         self.face_model = "opencv_face_detector_uint8.pb"
 
     @classmethod
-    def load_network(cls, model_path, network_file):
+    def load_network(cls, model_path: str, network_file: str):
         # Load network
         network = cv.dnn.readNet(model_path, network_file)
         return network
 
-    def get_face_boxes(self, image, conf_threshold: float = 0.7):
+    def get_face_boxes(self, image: np.ndarray, conf_threshold: float = 0.7):
         net = self.load_network(model_path=self.face_model, network_file=self.face_proto)
         image_frame = image.copy()
         frame_height = image_frame.shape[0]
