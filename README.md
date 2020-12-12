@@ -9,5 +9,6 @@ You can download caffe-models here:
 ## Getting Started:
 Here's how I'm appraochin gthis problem:
 - Gender detection as a classification problem
-- Age detection problem as a regression problem. 
+- Age detection problem as a regression problem.
+
 However, accurate estimation of age is not an easy task. so instead of giving a precise number I'm going to detect the age range.
