@@ -7,6 +7,12 @@ class FaceDetection:
         self.face_net = face_network
 
     def get_face_boxes(self, image: np.ndarray, conf_threshold: float = 0.7) -> (np.ndarray, list):
+        """
+        Function to get bounding boxes of all detected faces in an image.
+        :param image: image
+        :param conf_threshold: confidence threshold of detection
+        """
+
         image_frame = image.copy()
         frame_height = image_frame.shape[0]
         frame_width = image_frame.shape[1]
