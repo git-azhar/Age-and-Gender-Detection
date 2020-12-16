@@ -22,6 +22,6 @@ detect_face = FaceDetection(face_net)
 frame_face, bboxes = detect_face.get_face_boxes(image=frame)
 
 # Age and Gender detection
-age_gender_detection = AgeGender(age_network=age_net, gender_network=gender_net, image_frame=frame, bboxes=bboxes)
+age_gender_detection = AgeGender(age_network=age_net, gender_network=gender_net, image_frame=frame_face, bboxes=bboxes)
 gender, age = age_gender_detection.detect_age_gender()
 

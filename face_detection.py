@@ -32,8 +32,8 @@ class FaceDetection:
                 y2 = int(detections[0, 0, i, 6] * frame_height)
                 bboxes.append([x1, y1, x2, y2])
 
-                cv.rectangle(img=image_frame, pt1=(x1, y1), pt2=(x2, y2), color=(0, 255, 0),
-                             thickness=int(round(frame_height/150)), lineType=8)
+                cv.rectangle(img=image_frame, pt1=(x1, y1), pt2=(x2, y2), color=(200, 255, 0),
+                             thickness=2, lineType=8)
         if not bboxes:
             print('No face detected')
         return image_frame, bboxes
