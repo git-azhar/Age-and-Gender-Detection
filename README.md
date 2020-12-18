@@ -15,12 +15,26 @@ Here's how I'm appraochin gthis problem:
 
 However, accurate estimation of age is not an easy task. so instead of giving a precise number I'm going to detect the age range.
 
+## Load Networks:
+
+```
+face_net = load_networks.load_face_net()
+gender_net = load_networks.load_gender_net()
+age_net = load_networks.load_age_net()
+```
 
 ## Face Detection:
-First task is to detect faces in a image as without detecting faces we won't be able to move further to the task of gender, age detection.
+First task is to detect faces in an image as without detecting faces we won't be able to move further to the task of gender, age detection.
 
 to get bounding boxes use follwoing method.
 ```
 detect_face = FaceDetection(face_net)
 frame_face, bboxes = detect_face.get_face_boxes(image=frame)
+```
+
+## Age and Gender detection
+
+```
+age_gender_detection = AgeGender(age_network=age_net, gender_network=gender_net, image_frame=frame_face, bboxes=bboxes)
+gender, age = age_gender_detection.detect_age_gender()
 ```
