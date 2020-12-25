@@ -1,4 +1,4 @@
-from face_detection import Detection
+from detection import Detection
 import cv2 as cv
 img_path = 'data/img4.jpg'
 detection = Detection()
